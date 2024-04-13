@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "main": "url('./images/bg-main-desktop.png')",
+        "card-front": "url('./images/bg-card-front.png')",
+        "card-back": "url('./images/bg-card-back.png')"
       },
     },
   },
