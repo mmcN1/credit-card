@@ -24,7 +24,7 @@ export default function Home() {
     <main className="flex  min-h-screen justify-end static">
       <div className="flex flex-col lg:flex-row justify-center w-full ">
         <Card cardInput={cardInput} />
-        <div className="flex flex-col justify-center items-center w-full z-0 bg-slate-100  ">
+        <div className="flex flex-col justify-center items-center lg:w-[3024px] z-0 bg-slate-100 h-full  ">
           <InputForms cardInput={cardInput} handleChange={handleChange} />
         </div>
       </div>

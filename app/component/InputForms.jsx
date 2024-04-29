@@ -43,16 +43,16 @@ export const InputForms = ({ cardInput, handleChange }) => {
 
   return (
     <>
-      <label className="flex flex-col">
+      <label className="flex flex-col items-center md:p-5">
         Card Name
         <input
           className="m-4 rounded bg-slate-200 p-1"
           type="text"
-          placeholder="0000 0000 0000 0000"
+          placeholder="Mehmet Temiz"
           onChange={(e) => handleChange("user", e.target.value)}
         />
       </label>
-      <label className="flex flex-col">
+      <label className="flex flex-col items-center md:p-5">
         Card Number
         <input
           className="m-4 rounded bg-slate-200 p-1"
@@ -61,26 +61,32 @@ export const InputForms = ({ cardInput, handleChange }) => {
           value={formatCreditCardNumber(cardInput.cardNum)}
           onChange={(e) => handleChange("cardNum", e.target.value)}
           type="text"
-          placeholder="Mehmet Temiz"
+          placeholder="0000 0000 0000 0000"
         />
       </label>
-      <div className="flex w-1/2 justify-around">
-        <input
-          className="w-1/4  rounded bg-slate-200 p-1"
-          type="text"
-          value={formatCreditDate(cardInput.date)}
-          maxLength={5}
-          onChange={(e) => handleChange("date", e.target.value)}
-          placeholder="MM/YY"
-        />
-        <input
-          className="w-1/4  rounded bg-slate-200 p-1"
-          type="text"
-          value={formatterCcv(cardInput.ccv)}
-          maxLength={3}
-          placeholder="CCV"
-          onChange={(e) => handleChange("ccv", e.target.value)}
-        />
+      <div className="flex w-1/2 lg:w-1/3 justify-around  ">
+        <label className="flex flex-col items-center ">
+          Year
+          <input
+            className="w-3/4 lg:w-2/4 rounded bg-slate-200 "
+            type="text"
+            value={formatCreditDate(cardInput.date)}
+            maxLength={5}
+            onChange={(e) => handleChange("date", e.target.value)}
+            placeholder="MM/YY"
+          />
+        </label>
+        <label className="flex flex-col items-center">
+          CCV
+          <input
+            className="w-3/4 lg:w-2/4 items-center rounded bg-slate-200 "
+            type="text"
+            value={formatterCcv(cardInput.ccv)}
+            maxLength={3}
+            placeholder="CCV"
+            onChange={(e) => handleChange("ccv", e.target.value)}
+          />
+        </label>
       </div>
     </>
   );
